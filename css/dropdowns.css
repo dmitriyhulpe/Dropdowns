@@ -1,0 +1,115 @@
+.menu {
+    background: #282c34;
+}
+
+.link {
+	display: block;
+	text-decoration: none;
+	white-space: nowrap;
+	min-width: 175px;
+	background: #282c34;
+	padding: 10px 20px;
+	color: #a4a6a7;
+}
+
+.link:hover {
+	background: #f85032;
+	color: #fff;
+}
+
+.menu li
+{
+    position: relative;
+    list-style: none;
+}
+
+/* .submenu li:hover > a
+{
+    background: #cd412b;
+	color: #fff;
+} */
+
+.list
+{
+    display: flex;
+}
+
+.submenu
+{
+    position: absolute;
+    top: auto;
+    left: 0;
+    display: none;
+}
+
+.sublist
+{
+    position: absolute;
+    top: 0;
+    left: 100%;
+
+    display: none;
+}
+
+.arrow
+{
+    position: absolute;
+    top: 12.5px;
+    right: 20px;
+    pointer-events: none;
+    display: block;
+    background: url('../images/select.svg');
+    height: 8px;
+    width: 12px;
+    cursor: pointer;
+}
+
+@media(max-width: 768px) {
+    .arrow.active
+    {
+        transform: rotate(-180deg);
+    }
+}
+
+@media(min-width: 767px) {
+    .submenu .arrow {
+        transform: rotate(-90deg);
+    }   
+}
+
+@media (min-width: 767px) {
+    
+    .list > li:hover .submenu
+    {
+        display: block;
+    }
+
+    .submenu > li:hover .sublist
+    {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .arrow {
+        display: block;
+    }
+
+    .list {
+        display: block;
+    }
+
+    .list,
+    .submenu,
+    .sublist {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .list.open,
+    .submenu.open,
+    .sublist.open {
+        display: block;
+    }
+}
